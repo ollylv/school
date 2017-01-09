@@ -1,0 +1,94 @@
+// Table of contents
+
+//=== footer-sprites
+//=== about-sprites
+//=== popup-sprites
+
+
+//============ footer-sprites start =========
+
+.sprite {
+  display: inline-block;
+  background-image: url("../img/footer/footer.png");
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-image: url("../img/footer/footer-hover.png");
+  }
+}
+
+.sprite-facebook {
+  width: 34px;
+  height: 32px;
+  background-position: -6px -6px;
+}
+
+.sprite-google {
+  width: 33px;
+  height: 32px;
+  background-position: -52px -6px;
+}
+
+.sprite-linkedin {
+  width: 33px;
+  height: 32px;
+  background-position: -97px -6px;
+}
+//============ footer-sprites end =========
+
+
+
+//============ about-sprites start =========
+.about-sprites {
+  display: block;
+  background-image: url("../img/body/about-icons.png");
+  background-repeat: no-repeat;
+  @include centerer;
+}
+
+.sprite-philosophy {
+  width: 42px;
+  height: 42px;
+  background-position: -5px -5px;
+}
+
+.sprite-social {
+  width: 39px;
+  height: 41px;
+  background-position: -57px -5px;
+}
+
+.sprite-work {
+  width: 34px;
+  height: 32px;
+  background-position: -106px -5px;
+}
+
+//============ about-sprites end=========
+
+
+//============ popup-sprites start =========
+.popup-sprites {
+  display: block;
+  background-image: url(../img/popups/popup-social.png);
+  background-repeat: no-repeat;
+}
+
+.sprite-adverts {
+  width: 25px;
+  height: 25px;
+  background-position: -7px -7px;
+}
+
+.sprite-partners {
+  width: 20px;
+  height: 26px;
+  background-position: -46px -7px;
+}
+
+.sprite-reviews {
+  width: 27px;
+  height: 25px;
+  background-position: -80px -7px;
+}
+//============ popup-sprites end =========

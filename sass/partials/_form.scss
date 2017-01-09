@@ -1,0 +1,157 @@
+.send-query-container {
+  width: 100%;
+  max-width: 340px;
+  height: 100%;
+  margin: 0 auto;
+
+  h1 {
+    width: 288px;
+    height: 48px;
+    margin: 0 28px 0 24px;
+    padding-top: 93px;
+    float: left;
+    font-family: "Open Sans";
+    font-size: 48px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 37px;
+    word-spacing: -2px;
+  }
+
+  p {
+    width: 299px;
+    margin: -5px 20px 0 21px;
+    padding-top: 29px;
+    float: left;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 30px;
+  }
+}
+
+.query-form {
+  width: 100%;
+  max-width: 340px;
+  height: 279px;
+  margin-top: 29px;
+  float: left;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+
+    li {
+      list-style: none;
+      @include placehold;
+
+      .is_error {
+        color: #ff6262;
+        background-color: #fbcdcd;
+        &::-webkit-input-placeholder {
+          color: #ff6262;
+        }
+        &::-moz-placeholder {
+          color: #ff6262;
+        }
+        &:-ms-input-placeholder {
+          color: #ff6262;
+        }
+        &:-moz-placeholder {
+          color: #ff6262;
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        margin-top: 10px;
+        padding: 0;
+        border: none;
+        font-family: "Open Sans";
+        font-size: 16px;
+        font-weight: 400;
+        color: #494e68;
+        background-color: #fff;
+        line-height: 30px;
+        text-indent: 16px;
+      }
+
+      .email {
+        float: right;
+        width: 50%;
+        max-width: 165px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+
+.location {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  color: #85919d;
+  background-color: #fff;
+  line-height: 30px;
+  text-indent: 12px;
+
+  .choose-loc {
+    display: none;
+  }
+
+  option {
+    font-weight: 400;
+    color: #494e68;
+  }
+}
+.colorIt {
+  color: #494e68;
+}
+
+#send-query-button {
+  position: relative;
+  width: 340px;
+  height: 60px;
+  margin: 29px auto 0;
+  float: left;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #2954a5;
+  line-height: 30px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #3267ca;
+  }
+}
+
+.phone {
+  width: 50%;
+  max-width: 165px;
+  -webkit-appearance: none;
+}
+
+//Spin arrows off - experimental
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
