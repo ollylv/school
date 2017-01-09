@@ -172,8 +172,9 @@ $(document).ready(function(){
             var $this = $(this);
 
             //didn't want to use name= attr :) chose class but plugin was giving undesired class names
-            if($this.hasClass('ui-autocomplete-input')){
+            if($this.hasClass('ui-autocomplete-input') || $this.hasClass('colorIt')){
                 $this.removeClass('ui-autocomplete-input');
+                $this.removeClass('colorIt');
             }
 
             var inputType = $this.attr('type');
