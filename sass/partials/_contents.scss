@@ -52,7 +52,6 @@
         height: 128px;
         margin: 0;
         float: left;
-        font-family: 'Open Sans';
         font-size: 60px;
         font-weight: 300;
         color: #fff;
@@ -73,7 +72,6 @@
         margin-bottom: 0;
         padding-left: 1px;
         float: left;
-        font-family: 'Open Sans';
         font-size: 18px;
         font-weight: 400;
         color: #fff;
@@ -98,7 +96,6 @@
   }
 
   span {
-    font-family: "Open Sans";
     font-size: 18px;
     font-weight: 400;
     color: #fff;
@@ -117,8 +114,7 @@
   a {
     width: 256px;
     height: 21px;
-    border-bottom: 2px dashed #ffffff;
-    font-family: "Open Sans";
+    border-bottom: 1px dashed #ffffff;
     font-size: 18px;
     font-weight: 400;
     color: #fff;
@@ -162,7 +158,6 @@
     h1 {
       margin: 0;
       padding: 0;
-      font-family: "Open Sans";
       font-size: 48px;
       font-weight: 300;
       line-height: 36px;
@@ -193,7 +188,6 @@
   h2 {
     width: 178px;
     height: 24px;
-    font-family: "Open Sans";
     font-size: 24px;
     color: #494e68;
     line-height: 19px;
@@ -218,7 +212,6 @@
   h2 {
     width: 142px;
     height: 18px;
-    font-family: "Open Sans";
     font-size: 24px;
     color: #494e68;
     line-height: 19px;
@@ -277,14 +270,12 @@
     h2 {
       margin: 0 auto;
       font-weight: 400;
-      font-family: "Open Sans";
       font-size: 24px;
     }
 
     p {
       margin: 0;
       text-align: justify;
-      font-family: "Open Sans";
       font-size: 18px;
       font-weight: 400;
       color: #85919d;
@@ -323,7 +314,6 @@
       height: 19px;
       margin: 0 auto;
       padding-top: 46px;
-      font-family: "Open Sans";
       font-size: 18px;
       font-weight: 400;
       color: #85919d;
@@ -341,3 +331,6 @@
   }
 }
 //============ footer end ===========
+.btn {
+  border: none;
+}

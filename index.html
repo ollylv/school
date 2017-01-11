@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,9 +15,11 @@
 <body>
     <div class="main-container">
         <div class="header">
+
             <div class="logo">
                 <img src="https://raw.githubusercontent.com/ollylv/school/master/img/header/dyninno-logo.png">
             </div>
+
             <div class="header-content">
                 <div class="header-content-container">
                     <div class="header-title">
@@ -30,7 +32,9 @@
                     <div class="learn-more-link" data-popup-open="popup-1"><a href="#">Learn more about our services</a></div>
                 </div>
             </div>
+
         </div>
+
         <div class="content-container">
             <div class="top-content">
                 <div class="about-content">
@@ -74,55 +78,61 @@
                     </div>
                 </div>
             </div>
+
             <div class="bottom-content">
+
                 <div class="send-query-container">
+
                     <h1>Send a Query</h1>
                     <p>"What was them stone houses for?" Hare-Lip queried.</p>
+
                     <form class="query-form">
-                        <ul>
-                            <li>
-                                <input type="text" class="title" placeholder="* Request title"/>
-                            </li>
-                            <li>
-                                <input type="text" class="name" value="John Doe" placeholder="* Name"/>
-                            </li>
-                            <li>
-                                <input type="number" class="phone" placeholder="* Phone"/>
-                                <input type="text" class="email" placeholder="* email"/>
-                            </li>
-                            <li>
-                                <select class="location">
-                                    <option class="choose-loc">* Choose your location</option>
-                                </select>
-                            </li>
-                            <li>
-                                <input type="button" id="send-query-button" value="Send Query">
-                            </li>
-                        </ul>
+
+                            <input type="text" class="title form-input" placeholder="* Request title"/>
+                            <input type="text" class="name form-input" value="John Doe" placeholder="* Name"/>
+                            <input type="number" class="phone form-input" placeholder="* Phone"/>
+                            <input type="text" class="email form-input" placeholder="* email"/>
+
+                            <select class="location form-input">
+                                <option class="choose-loc" selected disabled>* Choose your location</option>
+                            </select>
+
+                            <button type="submit" class="btn send-query-button">Send Query</button>
                     </form>
+
                 </div>
+
             </div>
         </div>
+
         <div class="footer">
+
             <div class="footer-container">
+
                 <div class="copyrights">© 2013-2016 Great Mockup. All rights reserved.</div>
+
                 <div class="social">
                     <i class="sprite sprite-linkedin"></i>
                     <i class="sprite sprite-facebook"></i>
                     <i class="sprite sprite-google"></i>
                 </div>
+
             </div>
         </div>
     </div>
+
     <div class="popup-1 popups" data-popup="popup-1" data-popup-close="popup-1">
         <div class="popup-container">
+
             <div class="popup-header"></div>
+
             <div class="popup-content">
                 <h1>We are number one!</h1>
                 <div class="popup-text-paragraph">
                     <p><span>Go and gaze upon the iron emblematical harpoons round yonder lofty mansion, and your question will be answered. Yes; all these brave houses and flowery<br></span> gardens came from the Atlantic, Pacific, and Indian oceans. One and all, they were harpooned and dragged up hither from the bottom of the sea. Can Herr Alexander perform a feat like that?</p>
                 </div>
             </div>
+
             <div class="popup-footer">
                 <div class="popup-footer-content">
                     <div class="popup-footer-reviews">
@@ -139,30 +149,38 @@
                     </div>
                 </div>
             </div>
+
             <a class="popup-close" data-popup-close="popup-1" href="#">
                 <div class="popup-close-container">
                     <span data-popup-close="popup-1">&#x2573;</span>
                 </div>
             </a>
+
         </div>
     </div>
+
     <div class="popup-2 popups" data-popup="popup-2" data-popup-close="popup-2">
         <div class="popup2-container">
+
             <div class="popup2-content">
                 <h1>Thank you!</h1>
                 <div class="popup2-text-paragraph">
                     <p>Further conversation of a personal nature was prevented by the entrance of Sola, who was much agitated and wholly unlike her usual calm and possessed self.</p>
                 </div>
             </div>
+
             <div class="popup-2-button apply-button" data-popup-close="popup-2">
                 <span data-popup-close="popup-2">Understood</span>
             </div>
+
             <a class="popup2-close" data-popup-close="popup-2" href="#">
                 <div class="popup2-close-container">
                     <span data-popup-close="popup-2">&#x2573;</span>
                 </div>
             </a>
+
         </div>
     </div>
+
 </body>
 </html>

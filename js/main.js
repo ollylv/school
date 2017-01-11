@@ -3,6 +3,7 @@ $(document).ready(function(){
     //---- GLOBAL VAR
     var $formElements = $('.query-form').find('input, select');
     var $email = $('.email');
+    var $scrollTo = $('.bottom-content');
 
     //---- AJAX REQUEST FUNCTIONS
     ajaxCountries();
@@ -35,7 +36,6 @@ $(document).ready(function(){
 
     //---- SCROLL TO FORM
     $('.apply-button').on('click', function (){
-        var $scrollTo = $('.bottom-content');
         var position = $scrollTo.offset().top;
 
         //html for firefox and ie
@@ -66,14 +66,15 @@ $(document).ready(function(){
     });
 
     //---- FORM VALIDATION + SUBMIT
-    $('#send-query-button').on('click', function (e) {
+    $('.send-query-button').on('click', function (e) {
         var error = formValidation();
 
-        if(error){
+        if(error > 0){
             e.preventDefault();
         }
 
-        else{
+        else {
+            e.preventDefault();
             console.log(createformObj());
             $('[data-popup=popup-2]').fadeIn(350);
             clearForm();
@@ -91,7 +92,7 @@ $(document).ready(function(){
     // the shame :D
     $('.location').on('focus', function () {
         var $this = $(this);
-        $this.addClass('colorIt');
+        $this.addClass('colorit');
     });
     //-------- ONCLICK EVENT LISTENERS - END
 
@@ -138,7 +139,7 @@ $(document).ready(function(){
             var $this = $(this);
             var inputVal = $this.val();
 
-            if(inputVal === undefined || inputVal === '' || inputVal === '* Choose your location'){
+            if(inputVal === undefined || inputVal === '' || inputVal === null){
                 errorCount++;
                 $this.addClass('is_error');
             }
@@ -146,10 +147,7 @@ $(document).ready(function(){
 
                 if($this.hasClass('email')){
 
-                    if(validateEmail(inputVal)){
-                        return true;
-                    }
-                    else {
+                    if(!validateEmail(inputVal)){
                         errorCount++;
                         $this.addClass('is_error');
                     }
@@ -157,12 +155,7 @@ $(document).ready(function(){
             }
         });
 
-        if (errorCount === 0){
-            return false;
-        }
-        else {
-            return true;
-        }
+        return errorCount ;
     }
     //----- CREATE OBJECT AFTER SUBMIT
     function createformObj(){
@@ -172,19 +165,19 @@ $(document).ready(function(){
             var $this = $(this);
 
             //didn't want to use name= attr :) chose class but plugin was giving undesired class names
-            if($this.hasClass('ui-autocomplete-input') || $this.hasClass('colorIt')){
+            if($this.hasClass('ui-autocomplete-input') || $this.hasClass('colorit') || $this.hasClass('form-input')){
                 $this.removeClass('ui-autocomplete-input');
-                $this.removeClass('colorIt');
+                $this.removeClass('colorit');
+                $this.removeClass('form-input');
             }
 
-            var inputType = $this.attr('type');
             var inputVal = $this.val();
             var name = $this.attr('class');
 
-            //filtering button out ;/
-            if(inputType !== 'button'){
-                obj[name] = inputVal;
-            }
+            //creating dynamic property name and property value
+
+            obj[name] = inputVal;
+
         });
 
         return obj;
@@ -193,7 +186,7 @@ $(document).ready(function(){
     function clearForm(){
 
         $('.query-form')[0].reset();
-        $('.location').removeClass('colorIt');
+        $('.location').removeClass('colorit');
 
     }
 
@@ -201,14 +194,8 @@ $(document).ready(function(){
     function validateEmail(email) {
         var emailRegex = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
 
-        if (emailRegex.test(email)){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return emailRegex.test(email);
     }
-
     //-------- FUNCTIONS - END
 
 });
