@@ -4,30 +4,35 @@ $(document).ready(function(){
     var $formElements = $('.query-form').find('input, select');
     var $email = $('.email');
     var $scrollTo = $('.bottom-content');
+    var $popupOpenattr = $('[data-popup-open]');
+    var $popupQuery = $('[data-popup=popup-query]');
+    var $popups = $('.popups');
+    var $popupClose = $('.popup-close');
+    var $understoodButton = $('.popup-query-button');
+    var $toFormbutton = $('.apply-button');
+    var $selectLocation = $('.location');
+
+    //---- ARRAYS
+    var availableTags = [
+        "alextest@gmail.com",
+        "peter.test@itncorp.com",
+        "daniel.test@itncorp.com",
+        "bruce.test@itncorp.com",
+        "bondar.test@dyninno.com",
+        "svetlana.example@dyninno.com",
+        "abbas.example@itncorp.com",
+        "marina.example@itncorp.com",
+        "jeffrey.example@itncorp.com"
+    ];
 
     //---- AJAX REQUEST FUNCTIONS
     ajaxCountries();
 
     //---- E-MAIL PLUGIN - START
-    $( function() {
-        var availableTags = [
-            "alextest@gmail.com",
-            "peter.test@itncorp.com",
-            "daniel.test@itncorp.com",
-            "bruce.test@itncorp.com",
-            "bondar.test@dyninno.com",
-            "svetlana.example@dyninno.com",
-            "abbas.example@itncorp.com",
-            "marina.example@itncorp.com",
-            "jeffrey.example@itncorp.com"
-        ];
-
-        $email.autocomplete({
-            minLength: 2,
-            source: availableTags
-        });
-
-    } );
+    $email.autocomplete({
+        minLength: 2,
+        source: availableTags
+    });
     //---- E-MAIL PLUGIN - END
 
 
@@ -35,7 +40,7 @@ $(document).ready(function(){
     //------- ONCLICK EVENT LISTENERS - START
 
     //---- SCROLL TO FORM
-    $('.apply-button').on('click', function (){
+    $toFormbutton.on('click', function (){
         var position = $scrollTo.offset().top;
 
         //html for firefox and ie
@@ -43,41 +48,44 @@ $(document).ready(function(){
     });
 
     //---- POPUP OPEN
-    $('[data-popup-open]').on('click', function(e)  {
+    $popupOpenattr.on('click', function(e)  {
         var targeted_popup_class = $(this).attr('data-popup-open');
-
+            console.log(targeted_popup_class);
         $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
 
         e.preventDefault();
     });
 
-    //---- POPUP CLOSE
-    $('[data-popup-close]').on('click', function(e)  {
-
-        if (e.target !== this){
-            return;
+    //---- POPUP CLOSE (OUTSIDE) IF YOU CLICK ON CURRENT ACTUAL POPUP MODAL - IF NOT IT DOES NOTHING
+    $popups.on('click', function(e){
+        if(e.target == this){
+            popupFade();
         }
-        else {
-            var targeted_popup_class = $(this).attr('data-popup-close');
-            $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+    });
 
-            e.preventDefault();
-        }
+    //---- POPUP CLOSE (X BUTTON)
+    $popupClose.on('click', function(e){
+        popupFade();
+        e.preventDefault();
+    });
+
+    //---- POPUP CLOSE (UNDERSTOOD BUTTON)
+    $understoodButton.on('click', function(e){
+        popupFade();
+        e.preventDefault();
     });
 
     //---- FORM VALIDATION + SUBMIT
     $('.send-query-button').on('click', function (e) {
         var error = formValidation();
 
-        if(error > 0){
-            e.preventDefault();
-        }
-
-        else {
+        if (error <= 0) {
             e.preventDefault();
             console.log(createformObj());
-            $('[data-popup=popup-2]').fadeIn(350);
+            $popupQuery.fadeIn(350);
             clearForm();
+        } else {
+            e.preventDefault();
         }
     });
 
@@ -90,10 +98,12 @@ $(document).ready(function(){
     });
 
     // the shame :D
-    $('.location').on('focus', function () {
+    $selectLocation.on('focus', function () {
         var $this = $(this);
         $this.addClass('colorit');
     });
+
+
     //-------- ONCLICK EVENT LISTENERS - END
 
 
@@ -121,7 +131,7 @@ $(document).ready(function(){
 
             var countryName = item.name;
 
-            $(".location").append('<option value="' + countryName + '">' + countryName + '</option>');
+            $selectLocation.append('<option value="' + countryName + '">' + countryName + '</option>');
 
         });
     }
@@ -166,9 +176,11 @@ $(document).ready(function(){
 
             //didn't want to use name= attr :) chose class but plugin was giving undesired class names
             if($this.hasClass('ui-autocomplete-input') || $this.hasClass('colorit') || $this.hasClass('form-input')){
+
                 $this.removeClass('ui-autocomplete-input');
                 $this.removeClass('colorit');
                 $this.removeClass('form-input');
+
             }
 
             var inputVal = $this.val();
@@ -186,7 +198,8 @@ $(document).ready(function(){
     function clearForm(){
 
         $('.query-form')[0].reset();
-        $('.location').removeClass('colorit');
+
+        $selectLocation.removeClass('colorit');
 
     }
 
@@ -196,7 +209,16 @@ $(document).ready(function(){
 
         return emailRegex.test(email);
     }
+    //----- POPUP FADE
+    function popupFade() {
+        $popups.fadeOut(350);
+    }
     //-------- FUNCTIONS - END
+
+
+
+
+
 
 });
 

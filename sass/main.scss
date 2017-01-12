@@ -1,2 +1,6 @@
-@import 'globals/style';
-@import 'partials/style';
+@import 'globals/mixins';
+@import 'globals/root';
+@import 'partials/contents';
+@import 'partials/form';
+@import 'partials/popup';
+@import 'partials/social';

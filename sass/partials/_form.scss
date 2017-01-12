@@ -7,22 +7,19 @@
   margin: 0 auto;
 
   h1 {
-    width: 288px;
-    height: 48px;
-    margin: 0 28px 0 24px;
-    padding-top: 93px;
+    width: 300px;
+    margin: 95px 20px 0 20px;
+    text-align: center;
     float: left;
     font-size: 48px;
     font-weight: 300;
     color: #fff;
     line-height: 37px;
-    word-spacing: -2px;
   }
 
   p {
-    width: 299px;
-    margin: -5px 20px 0 21px;
-    padding-top: 29px;
+    width: 300px;
+    margin: 40px 20px 0 20px;
     float: left;
     text-align: center;
     font-size: 18px;
@@ -53,8 +50,9 @@
   width: 100%;
   max-width: 340px;
   height: 279px;
-  margin-top: 29px;
+  margin-top: 30px;
   float: left;
+  @include placehold;
 
   input {
     width: 100%;
@@ -68,7 +66,6 @@
     background-color: #fff;
     line-height: 30px;
     text-indent: 16px;
-    @include placehold;
   }
 
   .email {
@@ -77,27 +74,18 @@
     max-width: 165px;
     padding: 0;
   }
+
   .send-query-button {
-    position: relative;
-    width: 340px;
-    height: 60px;
     margin: 29px auto 0;
     float: left;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #fff;
-    background-color: #2954a5;
     line-height: 30px;
     text-decoration: none;
-
-    &:hover {
-      background-color: #3267ca;
-    }
   }
 }
-
-
-
 
 .location {
   width: 100%;
@@ -124,8 +112,6 @@
   .colorit {
     color: #494e68;
   }
-
-
 
 .phone {
   width: 50%;
