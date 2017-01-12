@@ -50,7 +50,7 @@ $(document).ready(function(){
     //---- POPUP OPEN
     $popupOpenattr.on('click', function(e)  {
         var targeted_popup_class = $(this).attr('data-popup-open');
-            console.log(targeted_popup_class);
+
         $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
 
         e.preventDefault();
